@@ -1,11 +1,10 @@
-from abc import ABC
 from itertools import islice
 
 
 from mrjob.job import MRJob
 
 
-class MRWordFrequencyCount(MRJob, ABC):
+class MRWordFrequencyCount(MRJob):
 
     def mapper(self, _, line):
         palabras = line.split(',')
