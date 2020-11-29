@@ -1,6 +1,6 @@
 from abc import ABC
 from itertools import islice
-import pandas
+
 
 from mrjob.job import MRJob
 
