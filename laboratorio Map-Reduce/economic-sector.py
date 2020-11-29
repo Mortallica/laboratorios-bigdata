@@ -1,8 +1,6 @@
 from itertools import islice
 from statistics import mean
-
 from mrjob.job import MRJob
-
 
 class MRWordFrequencyCount(MRJob):
 
