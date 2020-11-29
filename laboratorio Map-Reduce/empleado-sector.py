@@ -1,10 +1,9 @@
+from abc import ABC
 from itertools import islice
-
-
 from mrjob.job import MRJob
 
 
-class MRWordFrequencyCount(MRJob):
+class EmpleadoSector(MRJob, ABC):
 
     def mapper(self, _, line):
         palabras = line.split(',')
@@ -26,4 +25,4 @@ class MRWordFrequencyCount(MRJob):
 
 
 if __name__ == '__main__':
-    MRWordFrequencyCount.run()
+    EmpleadoSector.run()

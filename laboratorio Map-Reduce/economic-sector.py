@@ -1,8 +1,10 @@
+from abc import ABC
 from itertools import islice
 from statistics import mean
 from mrjob.job import MRJob
 
-class MRWordFrequencyCount(MRJob):
+
+class EconomicSector(MRJob, ABC):
 
     def mapper(self, _, line):
         palabras = line.split(',')
@@ -22,4 +24,4 @@ class MRWordFrequencyCount(MRJob):
 
 
 if __name__ == '__main__':
-    MRWordFrequencyCount.run()
+    EconomicSector.run()

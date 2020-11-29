@@ -1,10 +1,10 @@
+from abc import ABC
 from itertools import islice
 from statistics import mean
-
 from mrjob.job import MRJob
 
 
-class MRWordFrequencyCount(MRJob):
+class SalarioEmpleado(MRJob, ABC):
 
     def mapper(self, _, line):
         palabras = line.split(',')
@@ -20,8 +20,8 @@ class MRWordFrequencyCount(MRJob):
             yield x[0], x[1]
 
     def reducer(self, key, values):
-        yield key, round(mean(values))
+        yield key, mean(values)
 
 
 if __name__ == '__main__':
-    MRWordFrequencyCount.run()
+    SalarioEmpleado.run()
